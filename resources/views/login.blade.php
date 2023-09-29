@@ -46,16 +46,16 @@ input[type="submit"]:hover {
 </head>
 <body>
     <div>
+        @csrf
         @if (session('msg'))
 
-        <mar>{{session('msg')}}</toast>
-
+        <marquee direction="up" behavior="slide" height="50%">{{session('msg')}}</marquee>
 
         @endif
     </div>
-<form action="/login" method="post">
-    <label for="username">Username:</label><br>
-    <input type="text" id="username" name="username"><br>
+<form action="/login" method="get">
+    <label for="name">Username:</label><br>
+    <input type="text" id="name" name="name"><br>
     <label for="password">Password:</label><br>
     <input type="password" id="password" name="password"><br><br>
     <input type="submit" value="Sign up">
