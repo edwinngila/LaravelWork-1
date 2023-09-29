@@ -34,7 +34,7 @@ class AuthController extends BaseController
 
     if (Auth::attempt($credentials)) {
         // Authentication was successful
-        return redirect('/')->with('msg', 'Welcome user');; // Redirect to a dashboard or home page
+        return redirect('/')->with('msg', 'Welcome user'); // Redirect to a dashboard or home page
     }
 
     // Authentication failed

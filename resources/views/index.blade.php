@@ -32,6 +32,10 @@
 
     @extends('layouts.default')
 
-    @session
+    @section('content')
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum quisquam modi voluptatibus pariatur delectus in at est, 
+    rem earum amet perspiciatis, labore officia. Nihil dicta ea ipsam consequatur deleniti facere.
+        
+    @endsection
 </body>
 </html>

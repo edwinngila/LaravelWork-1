@@ -25,7 +25,7 @@
 {{-- navigation --}}
     
     <ul>
-        <li><button><a href="/">Home</a></button></li>
+        <li><button><a href="/home">Home</a></button></li>
         <li><button><a href="/">About</a></button></li>
         <li><button><a href="/">Services </a></button></li>
         <li><button><a href="/login">Login</a></button></li>
