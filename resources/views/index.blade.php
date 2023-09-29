@@ -29,5 +29,9 @@
         <li><button><a href="/signup">Signup</a></button></li>
 
     </ul>
+
+    @extends('layouts.default')
+
+    @session
 </body>
 </html>

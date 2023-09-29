@@ -20,4 +20,5 @@ Route::get('/signup', function () {
 });
 Route::view('/login','login');
 Route::view('/home','index');
+Route::view('/','layouts.default');
 Route::post('/signup',[AuthController::class, 'signup']);
