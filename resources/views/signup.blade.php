@@ -36,9 +36,31 @@ input[type="submit"]:hover {
   background-color: #45a049;
   
 }
+ul li{
+        display: inline; 
+        margin-left:40px;
+        float:right;
+    }
+    ul{
+        background-color: DodgerBlue;
+        height:30px;
+    }
+    button{
+        background-color:Violet ;
+    }
     </style>
 </head>
 <body>
+  <div class="top-nav">
+<ul>
+        <li><button><a href="">Home</a></button></li>
+        <li><button><a href="">About</a></button></li>
+        <li><button><a href="">Services </a></button></li>
+        <li><button><a href="/login">Login</a></button></li>
+        <li><button><a href="/signup">Signup</a></button></li>
+
+    </ul>
+  </div>
 <form action="/signup" method="post">
   @csrf
     <label for="name">Username:</label><br>

@@ -19,4 +19,5 @@ Route::get('/signup', function () {
     return view('signup');
 });
 Route::view('/login','login');
+Route::view('/home','index');
 Route::post('/signup',[AuthController::class, 'signup']);

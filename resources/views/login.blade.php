@@ -42,9 +42,29 @@ input[type="submit"]:hover {
   background-color: #45a049;
   border-radius:20px;
 }
+ul li{
+        display: inline; 
+        margin-left:40px;
+        float:right;
+    }
+    ul{
+        background-color: DodgerBlue;
+        height:30px;
+    }
+    button{
+        background-color:Violet ;
+    }
     </style>
 </head>
 <body>
+<ul>
+        <li><button><a href="">Home</a></button></li>
+        <li><button><a href="">About</a></button></li>
+        <li><button><a href="">Services </a></button></li>
+        <li><button><a href="/login">Login</a></button></li>
+        <li><button><a href="/signup">Signup</a></button></li>
+
+    </ul>
     <div>
         @csrf
         @if (session('msg'))
@@ -58,7 +78,7 @@ input[type="submit"]:hover {
     <input type="text" id="name" name="name"><br>
     <label for="password">Password:</label><br>
     <input type="password" id="password" name="password"><br><br>
-    <input type="submit" value="Sign up">
+    <input type="submit" value="login">
   </form>
 </body>
 </html>
