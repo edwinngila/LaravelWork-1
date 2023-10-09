@@ -18,7 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/signup', function () {
     return view('signup');
 });
-Route::view('/login','login');
+Route::group(['middleware' => 'auth'], function(){
+    Route::view('/dashboard', 'dashboard');
+});
+Route::view('/login', 'login')->name('login');
 Route::view('/home','index');
 Route::view('/','layouts.default');
+Route::get('/logout', [AuthController::class, 'logout'])->name('user.logout');
 Route::post('/signup',[AuthController::class, 'signup']);
+Route::post('/login',[AuthController::class, 'login'])->name('user.login');

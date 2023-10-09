@@ -1,3 +1,6 @@
+@section('msg')
+    
+@endsection
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,22 +9,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body {
+              body {
   font-family: Arial, Helvetica, sans-serif;
 }
-label{
-    font-size: larger;
-    color: #45a049;
-    font-family: monospace;
-    font-weight: bold;
-}
 form {
-    width: 30%;
+  width: 30%;
   margin: 0 auto;
-  border:1.5px solid grey;
+  border:1.5px solid rgb(228, 10, 10);
   border-radius:20px;
   padding:50px 20px;
-  margin: 0 auto;
+  background: #0dac15;
+
 }
 input {
   width: 100%;
@@ -40,7 +38,7 @@ input[type="submit"] {
 }
 input[type="submit"]:hover {
   background-color: #45a049;
-  border-radius:20px;
+  
 }
 ul li{
         display: inline; 
@@ -54,31 +52,31 @@ ul li{
     button{
         background-color:Violet ;
     }
+    body{
+      background: #92e296;
+    }
     </style>
 </head>
 <body>
-<ul>
-        <li><button><a href="">Home</a></button></li>
-        <li><button><a href="">About</a></button></li>
-        <li><button><a href="">Services </a></button></li>
-        <li><button><a href="/login">Login</a></button></li>
-        <li><button><a href="/signup">Signup</a></button></li>
-
-    </ul>
+  @extends('layouts.default')
+  @section('content')
     <div>
         @csrf
         @if (session('msg'))
 
-        <marquee direction="up" behavior="slide" height="50%">{{session('msg')}}</marquee>
+        <em style="color: red">{{session('msg')}}</em>
 
         @endif
     </div>
-<form action="/login" method="get">
-    <label for="name">Username:</label><br>
-    <input type="text" id="name" name="name"><br>
+<form action="{{route('user.login')}}" method="post">
+  @csrf
+    <label for="email">Email:</label><br>
+    <input type="text" id="email" name="email"><br>
     <label for="password">Password:</label><br>
     <input type="password" id="password" name="password"><br><br>
     <input type="submit" value="login">
   </form>
+  
+  @endsection
 </body>
 </html>
