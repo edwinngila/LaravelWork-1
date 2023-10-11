@@ -10,6 +10,9 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-image: url('your-background-image.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
         }
 
         header {
@@ -75,6 +78,10 @@
     </header>
 
     <div class="container">
+        <div class="content">
+            <h1>Welcome to Your Website</h1>
+            <p>This is some sample content for your website. You can replace this with your actual content.</p>
+        </div>
         {{-- Content will go here --}}
         @yield('content')
         @yield('sidebar')

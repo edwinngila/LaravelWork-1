@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,86 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dashboard</title>
+    <!-- Add Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<style>
-    /* Add your CSS styles here */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 10px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-}
-
-main {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-}
-
-</style>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/dashboard">Dashboard</a></li>
-                <li><a href="/profile">Profile</a></li>
-                <li><a href="/logout">Logout</a></li>
-            </ul>
+    <header class="bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="/">DancoteJr</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/dashboard">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/profile">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <main>
+    <main class="container mt-4">
         <h1>Welcome to the Dashboard</h1>
-        <!-- Your dashboard content goes here -->
         <p>Here, you can view and manage your dashboard content.</p>
-        <p>Click <button id="toggleProfile">Click Here</button>to view your profile.</p>
+        <button id="toggleProfile" class="btn btn-primary">Click Here to view your profile</button>
     
-        <!-- Add a button or link to toggle the user profile -->
-        
-    
-        <div id="userProfile" style="display: none;">
-            <h1>Personal Details</h1>
-            <!-- Display user details -->
+        <div id="userProfile" class="mt-4" style="display: none;">
+            <h2>Personal Details</h2>
             <div class="user-details">
                 <p>Name: {{ Auth::user()->name }}</p>
                 <p>Email: {{ Auth::user()->email }}</p>
-                <p>Password: {{ Auth::user()->password }}</p>
                 <!-- Add more user details as needed -->
             </div>
         </div>
     </main>
     
+    <footer class="bg-dark text-light text-center py-3">
+        <p>&copy; 2023 DancoteJr</p>
+    </footer>
+
+    <!-- Add Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
         // JavaScript to toggle the visibility of the user profile
         const toggleProfileButton = document.getElementById('toggleProfile');
@@ -99,11 +71,5 @@ footer {
             }
         });
     </script>
-    
-    </main>
-
-    <footer>
-        <p>&copy; 2023 Your Company Name</p>
-    </footer>
 </body>
 </html>

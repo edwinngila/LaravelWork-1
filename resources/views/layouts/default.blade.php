@@ -5,11 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Website</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
+         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            background-image: url(/rainbow-colorful.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
 
         header {
@@ -31,7 +35,7 @@
 
         ul.navbar li a {
             text-decoration: none;
-            color: White;
+            color: white;
         }
 
         ul.navbar li button {
@@ -39,11 +43,11 @@
             border: none;
             padding: 8px 16px;
             border-radius: 5px;
-            color: White;
+            color: white;
         }
 
         ul.navbar li button a {
-            color: White;
+            color: white;
             text-decoration: none;
         }
 
@@ -55,10 +59,10 @@
 
         footer {
             background-color: DodgerBlue;
-            color: White;
+            color: white;
             text-align: center;
             padding: 10px 0;
-            margin-top: 25%
+            margin-top: 25%;
         }
     </style>
 </head>
@@ -67,7 +71,7 @@
         <div class="container">
             <ul class="navbar">
                 <li><button><a href="/home">Home</a></button></li>
-                <li><button><a href="/">About</a></button></li>
+                <li><button><a href="/about">About</a></button></li>
                 <li><button><a href="/">Services</a></button></li>
                 <li><button><a href="/login">Login</a></button></li>
                 <li><button><a href="/signup">Signup</a></button></li>
@@ -87,5 +91,8 @@
             <h1>Footer</h1>
         </div>
     </footer>
+
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

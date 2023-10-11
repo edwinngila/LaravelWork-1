@@ -23,6 +23,8 @@ Route::group(['middleware' => 'auth'], function(){
 });
 Route::view('/login', 'login')->name('login');
 Route::view('/home','index');
+Route::view('/about','about');
+
 Route::view('/','layouts.default');
 Route::get('/logout', [AuthController::class, 'logout'])->name('user.logout');
 Route::post('/signup',[AuthController::class, 'signup']);
