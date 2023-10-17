@@ -10,7 +10,7 @@
     <style>
          body {
             font-family: Arial, sans-serif;
-            background-image: url(/rainbow-colorful.jpg);
+            background-color: darkolivegreen
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;

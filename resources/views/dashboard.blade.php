@@ -8,6 +8,19 @@
     <!-- Add Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+<style>
+    #userProfile{
+        border: 5px solid red;
+        width: 30%;
+        height: 200px;
+        content: unset;
+        border-radius: 10%;
+        margin-left: 70px; 
+    }
+    #userProfile :hover{
+margin-left: 10px; 
+    }
+</style>
 <body>
     <header class="bg-dark">
         <nav class="navbar navbar-expand-lg navbar-dark">
@@ -19,14 +32,19 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="/">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/dashboard">Dashboard</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/profile">Profile</a>
-                        </li>
+
+                     @auth
+    @if(auth()->user()->hasRole('Admin'))
+    <a class="nav-link" href="/dashboard">Dashboard</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="#profile">Profile</a>
+</li>
+    @endif
+@endauth
+
+
+                       
                         <li class="nav-item">
                             <a class="nav-link" href="/logout">Logout</a>
                         </li>
