@@ -11,10 +11,10 @@
 <style>
     #userProfile{
         border: 5px solid red;
-        width: 30%;
-        height: 200px;
-        content: unset;
-        border-radius: 10%;
+        width: 250px;
+        height: 250px;
+        display: contents;
+        border-radius: 50%;
         margin-left: 70px; 
     }
     #userProfile :hover{
@@ -22,6 +22,7 @@ margin-left: 10px;
     }
 </style>
 <body>
+    {{-- Header --}}
     <header class="bg-dark">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
@@ -35,59 +36,54 @@ margin-left: 10px;
 
                      @auth
     @if(auth()->user()->hasRole('Admin'))
-    <a class="nav-link" href="/dashboard">Dashboard</a>
+    <a class="nav-link" href="/dashboard">dashboard </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="#profile">Profile</a>
+    <a class="nav-link" href="#profile">manage users</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="#profile">manage roles</a>
 </li>
     @endif
 @endauth
 
 
-                       
-                        <li class="nav-item">
-                            <a class="nav-link" href="/logout">Logout</a>
-                        </li>
-                    </ul>
+<li class="nav-item">
+    <a class="nav-link" href="#profile">manage products</a>
+</li>
+ <li class="nav-item">
+  <a class="nav-link" href="/logout">Logout</a>
+     </li>
+     </ul>
                 </div>
             </div>
         </nav>
     </header>
 
+        {{-- Navigation --}}
+
+
     <main class="container mt-4">
         <h1>Welcome to the Dashboard</h1>
         <p>Here, you can view and manage your dashboard content.</p>
-        <button id="toggleProfile" class="btn btn-primary">Click Here to view your profile</button>
-    
-        <div id="userProfile" class="mt-4" style="display: none;">
-            <h2>Personal Details</h2>
-            <div class="user-details">
-                <p>Name: {{ Auth::user()->name }}</p>
-                <p>Email: {{ Auth::user()->email }}</p>
-                <!-- Add more user details as needed -->
-            </div>
-        </div>
+       
     </main>
+
     
+    <div id="userProfile" class="mt-4" >
+        <h2>Personal Details</h2>
+        <div class="user-details">
+            <p>Name: {{ Auth::user()->name }}</p>
+            <p>Email: {{ Auth::user()->email }}</p>
+            <!-- Add more user details as needed -->
+        </div>
+    </div>
+      {{-- Footer --}}
     <footer class="bg-dark text-light text-center py-3">
         <p>&copy; 2023 DancoteJr</p>
     </footer>
 
-    <!-- Add Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-        // JavaScript to toggle the visibility of the user profile
-        const toggleProfileButton = document.getElementById('toggleProfile');
-        const userProfile = document.getElementById('userProfile');
     
-        toggleProfileButton.addEventListener('click', () => {
-            if (userProfile.style.display === 'none') {
-                userProfile.style.display = 'block';
-            } else {
-                userProfile.style.display = 'none';
-            }
-        });
-    </script>
+
 </body>
 </html>
