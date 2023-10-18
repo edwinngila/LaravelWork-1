@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 
 
 
@@ -21,6 +22,7 @@ Route::get('/signup', function () {
 });
 Route::group(['middleware' => 'auth'], function(){
     Route::view('/dashboard', 'dashboard');
+// Route::resource('/users',[UserController::class, 'index'])->name('users.index');
 });
 Route::view('/login', 'login')->name('login');
 Route::view('/home','index');

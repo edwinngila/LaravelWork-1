@@ -39,8 +39,9 @@ margin-left: 10px;
     <a class="nav-link" href="/dashboard">dashboard </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="#profile">manage users</a>
+    <a class="nav-link" href="{{ route('users.index') }}">manage users</a>
 </li>
+
 <li class="nav-item">
     <a class="nav-link" href="#profile">manage roles</a>
 </li>
@@ -69,8 +70,12 @@ margin-left: 10px;
        
     </main>
 
-    
-    {{-- <div id="userProfile" class="mt-4" >
+
+
+
+    @yield('content')
+{{--     
+    <div id="userProfile" class="mt-4" >
         <h2>Personal Details</h2>
         <div class="user-details">
             <p>Name: {{ Auth::user()->name }}</p>
