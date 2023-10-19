@@ -39,7 +39,7 @@ margin-left: 10px;
     <a class="nav-link" href="/dashboard">dashboard </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="#profile">manage users</a>
+    <a class="nav-link" href="{{route('users.index')}}">manage users</a>
 </li>
 <li class="nav-item">
     <a class="nav-link" href="#profile">manage roles</a>

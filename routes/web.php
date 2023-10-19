@@ -22,10 +22,10 @@ Route::get('/signup', function () {
 });
 Route::group(['middleware' => 'auth'], function(){
     Route::view('/dashboard', 'dashboard');
-// Route::resource('/users',[UserController::class, 'index'])->name('users.index');
+Route::resource('users',UserController::class);
 });
 Route::view('/login', 'login')->name('login');
-Route::view('/home','index');
+
 Route::view('/about','about');
 
 Route::view('/','layouts.default');
