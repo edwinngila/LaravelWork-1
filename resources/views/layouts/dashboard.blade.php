@@ -64,15 +64,9 @@ margin-left: 10px;
         {{-- Navigation --}}
 
 
-    <main class="container mt-4">
-        <h1>Welcome to the Dashboard</h1>
-        <p>Here, you can view and manage your dashboard content.</p>
-       
-    </main>
 
 
-
-
+        
     @yield('content')
 {{--     
     <div id="userProfile" class="mt-4" >

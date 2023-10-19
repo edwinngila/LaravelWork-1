@@ -10,12 +10,34 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
 </head>
+<style>
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 250px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 20px;
+    }
+
+    .btn {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .btn:hover + .dropdown-content {
+        display: block;
+    }
+    </style>
 <body>
     @extends('layouts.dashboard')
 
     @section('content')
-        <h1>User List</h1>
-        <table class="table table-striped table-hover table-bordered table-info">
+        <h1>Users List</h1>
+        <table class="table table-striped table-hover table-bordered table-dark">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -45,7 +67,34 @@
                 @endforeach
             </tbody>
         </table>
-        <a href="/signup" class="btn btn-ou-success">Create User</a>
+        <button class="btn btn-success"><i class="bi bi-person-plus"></i>user</button>
+<div class="dropdown-content">
+    <form action="/signup" method="post" class="border p-4 bg-light rounded">
+        @csrf
+        <div class="mb-3">
+            <label for="name" class="form-label">Username:</label>
+            <input type="text" id="name" name="name" class="form-control">
+            @if ($errors->has('name'))
+            <div class="error-message">{{ $errors->first('name') }}</div>
+            @endif
+        </div>
+        <div class="mb-3">
+            <label for "email" class="form-label">Email:</label>
+            <input type="email" id="email" name="email" class="form-control">
+            @if ($errors->has('email'))
+            <div class="error-message">{{ $errors->first('email') }}</div>
+            @endif
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" id="password" name="password" class="form-control">
+            @if ($errors->has('password'))
+            <div class="error-message">{{ $errors->first('password') }}</div>
+            @endif
+        </div>
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+    </form>
+</div>
     @endsection
     
 </body>
