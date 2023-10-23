@@ -34,7 +34,7 @@ class AuthController extends BaseController
         ]);
        // return dd($user_validation); 
        User::create($user_validation);
-       return redirect('/login')->with('msg', 'registration successful'); // Redirect to a login page
+       return redirect('users')->with('msg', 'registration successful'); // Redirect to a login page
         } catch (Throwable $th) {
             return back()->withErrors();
 
