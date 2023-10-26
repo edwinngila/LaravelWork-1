@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
@@ -23,6 +24,7 @@ Route::get('/signup', function () {
 Route::group(['middleware' => 'auth'], function(){
     Route::view('/dashboard', 'dashboard');
 Route::resource('users',UserController::class);
+Route::resource('products', ProductController::class);
 });
 Route::view('/login', 'login')->name('login');
 

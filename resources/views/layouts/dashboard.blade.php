@@ -50,7 +50,7 @@ margin-left: 10px;
 
 
 <li class="nav-item">
-    <a class="nav-link" href="#profile">manage products</a>
+    <a class="nav-link" href="{{ route('products.index') }}">manage products</a>
 </li>
  <li class="nav-item">
   <a class="nav-link" href="/logout">Logout</a>
@@ -68,15 +68,7 @@ margin-left: 10px;
 
         
     @yield('content')
-{{--     
-    <div id="userProfile" class="mt-4" >
-        <h2>Personal Details</h2>
-        <div class="user-details">
-            <p>Name: {{ Auth::user()->name }}</p>
-            <p>Email: {{ Auth::user()->email }}</p>
-            <!-- Add more user details as needed -->
-        </div>
-    </div> --}}
+
 
     
       {{-- Footer --}}

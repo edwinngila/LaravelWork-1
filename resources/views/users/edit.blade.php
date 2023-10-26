@@ -16,49 +16,28 @@
     @extends('layouts.dashboard') 
 
 
-    @section('content')
-        <h1>Edit User</h1>
-        <form method="POST" action="{{ route('users.update', ['user' => $user->id]) }}">
-            @csrf
-            @method('PUT')
     
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" name="name" value="{{ $user->name }}" class="form-control">
-            </div>
-    
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" name="email" value="{{ $user->email }}" class="form-control">
-            </div>
-    
-            <button type="submit" class="btn btn-primary">Update User</button>
-        </form>
-    
-        <!-- User Details Modal -->
-        <div class="modal fade" id="userDetailsModal" tabindex="-1" role="dialog" aria-labelledby="userDetailsModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="userDetailsModalLabel">User Details</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p><strong>Name:</strong> {{ $user->name }}</p>
-                        <p><strong>Email:</strong> {{ $user->email }}</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
+@section('content')
+<div class="container">
+    <h1>Edit User</h1>
+    <form method="POST" action="{{ route('users.update', ['user' => $user->id]) }}">
+        @csrf
+        @method('PUT')
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" value="{{ $user->name }}" class="form-control" id="name">
         </div>
-    
-       
-    @endsection
-    
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" value="{{ $user->email }}" class="form-control" id="email">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update User</button>
+    </form>
+</div>
+@endsection
 
 </body>
 </html>
