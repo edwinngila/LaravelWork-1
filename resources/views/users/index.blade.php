@@ -79,8 +79,8 @@
                         <td>{{ $user->email }}</td>
                         <td>
                             
-                            <a href="{{ route('users.show', $user->id) }}" class="btn btn-outline-primary">Show</a>
-                            <a href="{{ route('users.edit', $user->id) }}" class="btn btn-outline-warning">Edit</a>
+                            <a href="{{ route('users.show', $user->id) }}" class="btn btn-outline-primary"><i class="bi bi-display"></i>Show</a>
+                            <a href="{{ route('users.edit', $user->id) }}" class="btn btn-outline-warning"><i class="bi bi-pencil"></i>Edit</a>
                             <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display: inline;">
                                 @csrf
                                 @method('DELETE')
