@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dashboard</title>
     <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <style>
@@ -34,57 +35,37 @@ margin-left: 10px;
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
 
-                     @auth
-    @if(auth()->user()->hasRole('Admin'))
-    <a class="nav-link" href="/dashboard">dashboard </a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="{{ route('users.index') }}">manage users</a>
-</li>
+                    @auth
+                    @if(auth()->user()->hasRole('Admin'))
+                            <a class="nav-link" href="/dashboard">dashboard </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('users.index') }}">manage users</a>
+                        </li>
 
-<li class="nav-item">
-    <a class="nav-link" href="#profile">manage roles</a>
-</li>
-    @endif
-@endauth
-
-
-<li class="nav-item">
-    <a class="nav-link" href="#profile">manage products</a>
-</li>
- <li class="nav-item">
-  <a class="nav-link" href="/logout">Logout</a>
-     </li>
-     </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#profile">manage roles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('products.index')}}">manage products</a>
+                        </li>
+                    @endif
+                    @endauth
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('viewProducts.index')}}">View products</a>
+                    </li>                
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                    </ul>
                 </div>
             </div>
         </nav>
-    </header>
-
-        {{-- Navigation --}}
-
-
-
-
-        
-    @yield('content')
-{{--     
-    <div id="userProfile" class="mt-4" >
-        <h2>Personal Details</h2>
-        <div class="user-details">
-            <p>Name: {{ Auth::user()->name }}</p>
-            <p>Email: {{ Auth::user()->email }}</p>
-            <!-- Add more user details as needed -->
-        </div>
-    </div> --}}
-
-    
-      {{-- Footer --}}
+    </header>        
+     @yield('content')
     <footer class="bg-dark text-light text-center py-3">
         <p>&copy; 2023 DancoteJr</p>
     </footer>
-
-    
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

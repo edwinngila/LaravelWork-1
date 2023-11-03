@@ -18,22 +18,24 @@
 
     @section('content')
         <h1>Edit User</h1>
-        <form method="POST" action="{{ route('users.update', ['user' => $user->id]) }}">
-            @csrf
-            @method('PUT')
-    
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" name="name" value="{{ $user->name }}" class="form-control">
-            </div>
-    
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" name="email" value="{{ $user->email }}" class="form-control">
-            </div>
-    
-            <button type="submit" class="btn btn-primary">Update User</button>
-        </form>
+        <div class="container">
+            <form class="col-5 offset-4" method="POST" action="{{ route('users.update', ['user' => $user->id]) }}">
+                @csrf
+                @method('PATCH')
+        
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" value="{{ $user->name }}" class="form-control">
+                </div>
+        
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" value="{{ $user->email }}" class="form-control">
+                </div>
+        
+                <button type="submit" class="btn btn-primary">Update User</button>
+            </form>
+        </div>
     
         <!-- User Details Modal -->
         <div class="modal fade" id="userDetailsModal" tabindex="-1" role="dialog" aria-labelledby="userDetailsModalLabel" aria-hidden="true">

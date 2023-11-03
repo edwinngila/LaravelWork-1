@@ -35,26 +35,29 @@ margin-left: 10px;
                         <li class="nav-item">
 
                      @auth
-    @if(auth()->user()->hasRole('Admin'))
-    <a class="nav-link" href="/dashboard">dashboard </a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="{{route('users.index')}}">manage users</a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="#profile">manage roles</a>
-</li>
-    @endif
-@endauth
+                @if(auth()->user()->hasRole('Admin'))
+                <a class="nav-link" href="/dashboard">dashboard </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('users.index')}}">manage users</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#profile">manage roles</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('products.create')}}">manage products</a>
+            </li>
+                @endif
+            @endauth
 
 
-<li class="nav-item">
-    <a class="nav-link" href="#profile">manage products</a>
-</li>
- <li class="nav-item">
-  <a class="nav-link" href="/logout">Logout</a>
-     </li>
-     </ul>
+        <li class="nav-item">
+            <a class="nav-link" href="/viewProducts">View products</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+            </li>
+            </ul>
                 </div>
             </div>
         </nav>
