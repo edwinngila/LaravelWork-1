@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
@@ -23,9 +24,14 @@ Route::get('/signup', function () {
 });
 Route::group(['middleware' => 'auth'], function(){
     Route::view('/dashboard', 'dashboard');
+<<<<<<< HEAD
     Route::resource('users',UserController::class);
     Route::resource('products',ProductsController::class);
     Route::resource('viewProducts',viewProductsController::class);
+=======
+Route::resource('users',UserController::class);
+Route::resource('products', ProductController::class);
+>>>>>>> 62d19a3380b67d2264b87390722ddfe74d35fad6
 });
 Route::view('/login', 'login')->name('login');
 

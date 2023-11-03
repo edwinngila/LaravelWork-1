@@ -51,7 +51,7 @@ class UserController extends Controller
         $user->email = $request->input('email');
         $user->save();
 
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with('msg','User Updated Successfully');
     }
 
     public function destroy($id)
@@ -60,6 +60,6 @@ class UserController extends Controller
         $user = User::find($id);
         $user->delete();
 
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with('msg','User Deleted Successfully');
     }
 }

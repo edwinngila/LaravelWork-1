@@ -16,6 +16,7 @@
     @extends('layouts.dashboard') 
 
 
+<<<<<<< HEAD
     @section('content')
         <h1>Edit User</h1>
         <div class="container">
@@ -56,11 +57,30 @@
                     </div>
                 </div>
             </div>
+=======
+    
+@section('content')
+<div class="container">
+    <h1>Edit User</h1>
+    <form method="POST" action="{{ route('users.update', ['user' => $user->id]) }}">
+        @csrf
+        @method('PUT')
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" value="{{ $user->name }}" class="form-control" id="name">
+>>>>>>> 62d19a3380b67d2264b87390722ddfe74d35fad6
         </div>
-    
-       
-    @endsection
-    
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" value="{{ $user->email }}" class="form-control" id="email">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update User</button>
+    </form>
+</div>
+@endsection
 
 </body>
 </html>

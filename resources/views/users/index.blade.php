@@ -79,13 +79,13 @@
                         <td>{{ $user->email }}</td>
                         <td>
                             
-                            <a href="{{ route('users.show', $user->id) }}" class="btn btn-outline-primary">Show</a>
-                            <a href="{{ route('users.edit', $user->id) }}" class="btn btn-outline-warning">Edit</a>
+                            <a href="{{ route('users.show', $user->id) }}" class="btn btn-outline-primary"><i class="bi bi-display"></i>Show</a>
+                            <a href="{{ route('users.edit', $user->id) }}" class="btn btn-outline-warning"><i class="bi bi-pencil"></i>Edit</a>
                             <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display: inline;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Are you sure you want to delete this user?')">
-                                    <i class="bi bi-trash3"></i>
+                                    <i class="bi bi-trash3">Delete</i>
                                 </button>
                             </form>
                         </td>
@@ -102,7 +102,7 @@
 <!-- The modal dialog -->
 <div id="userModal" class="modal">
     <div class="modal-content">
-        <button id="closeModal" class="close-button bg-danger"></button> <!-- Close button -->
+        <button id="closeModal" class="close-button bg-danger">X</button> <!-- Close button -->
         <form action="/signup" method="post" class="border p-4 bg-light rounded">
             @csrf
             <div class="mb-3">

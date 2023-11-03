@@ -43,26 +43,44 @@ margin-left: 10px;
                             <a class="nav-link" href="{{ route('users.index') }}">manage users</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="#profile">manage roles</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('products.index')}}">manage products</a>
-                        </li>
-                    @endif
-                    @endauth
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('viewProducts.index')}}">View products</a>
-                    </li>                
-                    <li class="nav-item">
-                        <a class="nav-link" href="/logout">Logout</a>
-                    </li>
-                    </ul>
+<li class="nav-item">
+    <a class="nav-link" href="#profile">manage roles</a>
+</li>
+    @endif
+@endauth
+
+
+<li class="nav-item">
+    <a class="nav-link" href="#profile">manage products</a>
+</li>
+ <li class="nav-item">
+  <a class="nav-link" href="/logout">Logout</a>
+     </li>
+     </ul>
                 </div>
             </div>
         </nav>
-    </header>        
-     @yield('content')
+    </header>
+
+        {{-- Navigation --}}
+
+
+
+
+        
+    @yield('content')
+{{--     
+    <div id="userProfile" class="mt-4" >
+        <h2>Personal Details</h2>
+        <div class="user-details">
+            <p>Name: {{ Auth::user()->name }}</p>
+            <p>Email: {{ Auth::user()->email }}</p>
+            <!-- Add more user details as needed -->
+        </div>
+    </div> --}}
+
+    
+      {{-- Footer --}}
     <footer class="bg-dark text-light text-center py-3">
         <p>&copy; 2023 DancoteJr</p>
     </footer>
